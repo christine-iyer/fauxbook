@@ -5,13 +5,13 @@ const mongoose = require('mongoose')
 // ----------pull schema and model from mongoose----------//
 const { Schema, model } = mongoose
 
-// ----------make user schema----------//
-const timeLineSchema = new Schema({
-  displayName: { type: String, required: true },
-  post: { type: String, required: true },
-  text: { type: String, required: true, unique: true },
-  createdDate: { type: String, required: true },
-  editedDate: { type: String },
+// ----------make friend schema----------//
+const friendSchema = new Schema({
+  firstName: { type: String, required: true },
+  lastName: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
+  preferredPronouns: { type: String },
   desplayPronouns: { type: Boolean },
   image: { type: String },
   city: { type: String },
@@ -24,8 +24,8 @@ const timeLineSchema = new Schema({
   jobsSaved: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Job' }]
 })
 
-// ----------make user model----------//
-const User = model('User', userSchema)
+// ----------make friend model----------//
+const Friend = model('Friend', friendSchema)
 
 // ----------EXPORT MODEL----------//
-module.exports = User
+module.exports = Friend

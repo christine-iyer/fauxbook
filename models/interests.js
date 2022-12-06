@@ -5,8 +5,8 @@ const mongoose = require('mongoose')
 // ----------pull schema and model from mongoose----------//
 const { Schema, model } = mongoose
 
-// ----------make user schema----------//
-const userSchema = new Schema({
+// ----------make interest schema----------//
+const interestSchema = new Schema({
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
   email: { type: String, required: true, unique: true },
@@ -18,14 +18,14 @@ const userSchema = new Schema({
   state: { type: String },
   gender: { type: String },
   raceEthnicity: [{ type: String }],
-  interests: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Interests' }],
-  friends: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Friends' }],
-  myPosts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Myposts' }],
-  friendsPosts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Friendsposts' }]
+  workExperience: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Experience' }],
+  education: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Education' }],
+  jobsApplied: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Job' }],
+  jobsSaved: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Job' }]
 })
 
-// ----------make user model----------//
-const User = model('User', userSchema)
+// ----------make interest model----------//
+const Interest = model('interest', interestSchema)
 
 // ----------EXPORT MODEL----------//
-module.exports = User
+module.exports = Interest

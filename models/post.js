@@ -1,12 +1,12 @@
-// ----------IMPORT DEPENDENCIES----------//
+/ ----------IMPORT DEPENDENCIES----------//
 const mongoose = require('mongoose')
 
 // ----------DEFINE MODEL----------//
 // ----------pull schema and model from mongoose----------//
 const { Schema, model } = mongoose
 
-// ----------make user schema----------//
-const userSchema = new Schema({
+// ----------make Post schema----------//
+const PostSchema = new Schema({
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
   email: { type: String, required: true, unique: true },
@@ -24,8 +24,8 @@ const userSchema = new Schema({
   jobsSaved: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Job' }]
 })
 
-// ----------make user model----------//
-const User = model('User', userSchema)
+// ----------make Post model----------//
+const Post = model('Post', PostSchema)
 
 // ----------EXPORT MODEL----------//
-module.exports = User
+module.exports = Post
