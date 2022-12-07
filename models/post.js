@@ -1,4 +1,4 @@
-/ ----------IMPORT DEPENDENCIES----------//
+// ----------IMPORT DEPENDENCIES----------//
 const mongoose = require('mongoose')
 
 // ----------DEFINE MODEL----------//
