@@ -25,7 +25,7 @@ const userSchema = new Schema({
   friends: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Friends' }],
   myPosts: [{ type: mongoose.Schema.Types.ObjectId, ref: '' }],
   sentFriendsRequest: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Friends' }],
-  receivedFriendRequests[{ type: mongoose.Schema.Types.ObjectId, ref: 'Friends' }], 
+  receivedFriendRequests: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Friends' }], 
   blockedFriends:[{ type: mongoose.Schema.Types.ObjectId, ref: 'Friends' }],
   createdDate: { type: Date },
   birthday: { type: Date },
